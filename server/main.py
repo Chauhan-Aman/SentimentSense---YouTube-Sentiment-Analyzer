@@ -1,6 +1,9 @@
 from fastapi import FastAPI
 from service.api.api import main_router
 from fastapi.middleware.cors import CORSMiddleware
+import os
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 app = FastAPI(title="Comment Toxicity Classifier")
 

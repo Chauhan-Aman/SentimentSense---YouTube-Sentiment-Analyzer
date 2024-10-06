@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Comment Sentiment Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="heading">YouTube Comment Sentiment Analysis</h1>
+        <p class="intro-para">Welcome to our YouTube Comment Sentiment Analysis tool, a state-of-the-art AI-ML solution
+            designed for
+            precise sentiment evaluation of YouTube comments. This advanced tool enables users to either enter a YouTube
+            video URL to analyze comments from that video or input a specific comment for a comprehensive sentiment
+            assessment. Each comment is meticulously analyzed across several key factors, including Toxicity, Severe
+            Toxicity, Obscenity, Threats, Insults, and Identity Hate.</p>
+        <p class="intro-para-res">Welcome to our YouTube Comment Sentiment Analysis tool, designed to evaluate sentiment, including toxicity, obscenity, threats, and hate, in comments or from video URLs.</p>
+        
+
+        <div class="container">
+            <div class="container-1">
+                <form id="urlForm">
+                    <label for="youtubeUrl">Enter YouTube URL:</label>
+                    <input type="text" id="youtubeUrl" placeholder="Enter YouTube URL..." required>
+                    <button type="submit">Analyze Youtube URL</button>
+                </form>
+                <div id="results" class="hidden">
+                    <h2>Results :</h2>
+                    <div>
+                        <p id="VideoTitle"></p>
+                        <p id="ChannelName"></p>
+                        <!-- <p id="ChannelId"></p> -->
+                    </div>
+                    <p id="avgPolarity"></p>
+                    <p id="mostposcomment"></p>
+                    <p id="mostnegcomment"></p>
+                    <div class="chart-container">
+                        <div class="bar-chart-container">
+                            <h3>Bar Chart</h3>
+                            <canvas id="barChart"></canvas>
+                        </div>
+
+                        <div class="pie-chart-container">
+                            <h3>Pie Chart</h3>
+                            <canvas id="pieChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toxicity Analysis Section -->
+            <div class="container-2">
+                <form id="CommentForm">
+                    <label for="comment">Enter Comment:</label>
+                    <textarea type="text" id="comment" placeholder="Enter Particular Comment..." required></textarea>
+                    <button type="submit">Analyze Comment</button>
+                </form>
+
+
+                <div id="toxicresults" style="display: none;">
+
+                    <div id="toxicity">
+                        <h3>Toxicity Analysis Results</h3>
+                        <div class="sentiment-container">
+                            <p id="commentText"></p>
+                            <div class="sentiment-item">
+                                <span class="sentiment-label">Toxic:</span>
+                                <span id="toxic"></span>
+                            </div>
+                            <div class="sentiment-item">
+                                <span class="sentiment-label">Severe Toxic:</span>
+                                <span id="severeToxic"></span>
+                            </div>
+                            <div class="sentiment-item">
+                                <span class="sentiment-label">Obscene:</span>
+                                <span id="obscene"></span>
+                            </div>
+                            <div class="sentiment-item">
+                                <span class="sentiment-label">Threat:</span>
+                                <span id="threat"></span>
+                            </div>
+                            <div class="sentiment-item">
+                                <span class="sentiment-label">Insult:</span>
+                                <span id="insult"></span>
+                            </div>
+                            <div class="sentiment-item">
+                                <span class="sentiment-label">Identity Hate:</span>
+                                <span id="identityHate"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading" style="display: none;">Processing comments and analyzing sentiment...</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

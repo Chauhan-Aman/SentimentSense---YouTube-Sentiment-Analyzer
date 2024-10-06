@@ -1,0 +1,267 @@
+/* Theme variables */
+:root {
+    --font-family: 'Arial', sans-serif;
+    --background-color: #f0f0f0;
+    --primary-color: #28a745;
+    --primary-color-hover: #218838;
+    --text-color: #333;
+    --heading-color: #000000;
+    --input-border-color: #ddd;
+    --input-bg-color: #fff;
+    --button-text-color: #fff;
+    --container-bg-color: #fff;
+    --container-shadow: rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 2rem 0;
+}
+
+.heading {
+    color: var(--heading-color);
+    margin: 0;
+    position: sticky;
+    top: 0.1px;
+    background-color: #77cb89;
+    width: 100%;
+    padding: 1.2rem 0;
+}
+
+.intro-para {
+    width: 60%;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.intro-para-res {
+    width: 60%;
+    text-align: center;
+    margin: 2rem 0;
+    display: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.container-1,
+.container-2 {
+    background-color: var(--container-bg-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px var(--container-shadow);
+    text-align: center;
+    height: max-content;
+    margin: 0 1rem;
+}
+
+.container-1 {
+    margin-left: 3rem;
+    width: 70%;
+}
+
+.container-2 {
+    margin-right: 3rem;
+    width: 30%;
+}
+
+h1 {
+    text-align: center;
+    color: var(--text-color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--input-border-color);
+    background-color: var(--input-bg-color);
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--primary-color-hover);
+}
+
+textarea {
+    width: 95%;
+    height: 100px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--input-border-color);
+    resize: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#results {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.pie-chart-container {
+    width: 35%;
+    height: 40%;
+    margin-right: 2rem;
+}
+
+.bar-chart-container {
+    width: 52%;
+    height: 100%;
+}
+
+#mostnegcomment {
+    color: red;
+}
+
+#mostposcomment {
+    color: green;
+}
+
+/* Style for the container holding the sentiment analysis results */
+.sentiment-container {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    /* Set a readable font */
+}
+
+.sentiment-item {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 4px;
+    /* Add some spacing between items */
+}
+
+.sentiment-label {
+    width: 130px;
+    /* Set a fixed width for labels */
+    font-weight: bold;
+    /* Make labels bold */
+    text-align: left;
+}
+
+#commentText {
+    margin: 0 0 1.2rem 0;
+}
+
+@media screen and (max-width: 1100px) {
+    p {
+        font-size: 1rem;
+    }
+
+    .intro-para {
+        width: 88%;
+    }
+
+    #commentText {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .container-1 {
+        display: block;
+        margin: 0 auto;
+        width: 83%;
+    }
+
+    .container-2 {
+        display: block;
+        margin: 1rem auto 0 auto;
+        width: 83%;
+    }
+
+    .header {
+        margin: 0;
+    }
+
+    .pie-chart-container {
+        margin-right: 0rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .chart-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        justify-content: space-between;
+        padding: 0.5rem;
+    }
+
+    .pie-chart-container {
+        width: 100%;
+    }
+
+    .bar-chart-container {
+        width: 100%;
+    }
+
+    .heading {
+        font-size: 1.2rem;
+    }
+
+    .intro-para {
+        display: none;
+    }
+
+    .intro-para-res {
+        width: 90%;
+        font-size: 0.8rem;
+        margin: 1rem 0;
+        display: block;
+    }
+}
